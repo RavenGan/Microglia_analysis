@@ -24,7 +24,7 @@ The data analyzed in this project are publicly available from the Gene Expressio
 2. **`Dat_microglia_E14.R`**  
    Performs preprocessing steps on the scRNA-seq data, including normalization, scaling, dimensionality reduction, clustering, and annotation.
 
-3. **`Dat_microglia_E14_HeatmapVioUmap.R`**  
+3. **`Dat_microglia_E14_HeatmapVio.R`**  
    Generates key visualizations such as heatmaps, violin plots, and feature plots to highlight gene expression patterns and cluster characteristics.
 
 4. **`Dat_microglia_E14_Violin.R`**  
