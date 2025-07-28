@@ -45,13 +45,6 @@ pdf("./Dat_E14/E14_umap.pdf", height = 8, width = 8)
 DimPlot(E14, reduction = "umap")
 dev.off()
 
-# Change ident of E14
-# Idents(E14) <- meta_data$cell_batch
-# x11()
-# pdf("./Dat_E14/E14_umap_batch_effects.pdf", height = 8, width = 8)
-# DimPlot(E14, reduction = "umap")
-# dev.off()
-
 saveRDS(E14, file = "./Dat_E14/E14_SeuratObject.rds")
 
 # find markers for every cluster compared to all remaining cells, report only the positive ones

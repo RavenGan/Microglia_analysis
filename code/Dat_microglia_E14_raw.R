@@ -2,7 +2,7 @@ setwd("/Users/david/Desktop/scRNA_seq_Neuron/Raw_data/Dat_microglia/Dat_microgli
 rm(list = ls())
 library(dplyr)
 library(Seurat)
-# We only consider E14 files: 8 files in total
+# We only consider E14 files
 # Consider male first
 # Add suffix for each cell due to replicated cells
 E14_M_B8 <- read.table("./unzipped_raw/GSM3442013_E14_M_B8.dge.txt", header = TRUE)
@@ -115,19 +115,6 @@ E14_F_B10_new <- matrix(0, nrow = length(union_genes), ncol = ncol(E14_F_B10))
 rownames(E14_F_B10_new) <- union_genes
 colnames(E14_F_B10_new) <- colnames(E14_F_B10)
 E14_F_B10_new[rownames(E14_F_B10), ] <- as.matrix(E14_F_B10)
-####################################################################
-# There may be batch effects I do not want to address here anyways.#
-####################################################################
-
-# use intersected genes for each batch
-# E14_M_B8_sub <- E14_M_B8[inter_genes, ]
-# E14_M_B7_sub <- E14_M_B7[inter_genes, ]
-# E14_M_B9_sub <- E14_M_B9[inter_genes, ]
-# E14_M_B11_sub <- E14_M_B11[inter_genes, ]
-# E14_F_B6_sub <- E14_F_B6[inter_genes, ]
-# E14_F_C1_sub <- E14_F_C1[inter_genes, ]
-# E14_F_B12_sub <- E14_F_B12[inter_genes, ]
-# E14_F_B10_sub <- E14_F_B10[inter_genes, ]
 
 E14 <- cbind(E14_M_B8_new, E14_M_B7_new)%>%
   cbind(E14_M_B9_new) %>%
